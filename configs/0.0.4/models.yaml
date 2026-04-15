@@ -573,10 +573,13 @@ models:
     supported_devices:
       ascend-910b:
         - vllm:docker
+      ascend-310p:
+        - mlguider:docker
 
     tag: bfloat16
     capabilities:
       - completion
+      - vision
 
   # Qwen3-5-35B-W4A8
   - model_id: qwen3.5-35b
@@ -595,6 +598,7 @@ models:
     tag: bfloat16
     capabilities:
       - completion
+      - vision
  
   # Qwen3-5-27B-W8A8
   - model_id: qwen3.5-27b
@@ -613,6 +617,7 @@ models:
     tag: bfloat16
     capabilities:
       - completion
+      - vision
 
   # Qwen3-5-9B
   - model_id: qwen3.5-9b
@@ -631,6 +636,7 @@ models:
     tag: bfloat16
     capabilities:
       - completion
+      - vision
 
   # Qwen3-5-2B
   - model_id: qwen3.5-2b
@@ -649,6 +655,7 @@ models:
     tag: bfloat16
     capabilities:
       - completion
+      - vision
     
   # Qwen3-5-4B
   - model_id: qwen3.5-4b
@@ -667,6 +674,7 @@ models:
     tag: bfloat16
     capabilities:
       - completion
+      - vision
 
   # Qwen3-5-0.8B
   - model_id: qwen3.5-0.8b
@@ -685,6 +693,7 @@ models:
     tag: bfloat16
     capabilities:
       - completion
+      - vision
 
   # Qwen3-5-122B-w8a8
   - model_id: qwen3.5-122b-w8a8
@@ -697,10 +706,13 @@ models:
     supported_devices:
       ascend-910b:
         - vllm:docker
+      ascend-310p:
+        - mlguider:docker
 
     tag: bfloat16
     capabilities:
       - completion
+      - vision
 
 # GLM-5.1-w4a8
   - model_id: glm-5.1-w4a8
