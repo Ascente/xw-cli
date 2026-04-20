@@ -311,6 +311,41 @@ vendors:
               - SYS_RAWIO
               - IPC_LOCK
               - SYS_RESOURCE
+              
+  # Intel Data Center GPU Series
+  - vendor_name: Intel
+    vendor_id: "0x8086"
+
+    chip_models:
+      # Intel Data Center GPU (Max / Flex / Arc series)
+      - config_key: intel-gpu
+        model_name: Intel Data Center GPU
+        device_id: "0xe211"
+        generation: Intel BMG
+        runtime_images:
+          vllm:
+            arm64: NONE
+            amd64: harbor.tsingmao.com/xw-cli/vllm-intel:0.11.1-b7-amd64
+        
+        ext_sandboxes:
+          devices:
+            - /dev/dri
+          volumes:
+            - /root/.cache:/root/.cache
+          runtime: runc
+          
+          vllm:
+            device_env: ZE_AFFINITY_MASK
+            environment:
+              VLLM_ALLOW_LONG_MAX_MODEL_LEN: "1"
+              VLLM_WORKER_MULTIPROC_METHOD: spawn
+            privileged: true
+            shm_size_gb: 32
+            capabilities:
+              - SYS_ADMIN
+              - SYS_RAWIO
+              - IPC_LOCK
+              - SYS_RESOURCE
     
 # Notes:
 # - config_key: Unique identifier used in runtime configuration and model definitions
