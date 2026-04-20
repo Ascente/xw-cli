@@ -52,6 +52,8 @@ models:
         - mlguider:docker
       metax-c550:
         - vllm:docker
+      intel-gpu:
+        - vllm:docker
 
     capabilities:
       - completion
