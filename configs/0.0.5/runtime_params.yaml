@@ -128,6 +128,17 @@ templates:
   - extra_args=--enable-auto-tool-choice --tool-call-parser hermes --reasoning-parser
     qwen3
   - image=harbor.tsingmao.com/xw-cli/vllm-ascend:qwen3_5-arm64
+- name: ascend-910c_qwen3.5-27b_vllm
+  envs: null
+  params:
+  - gpu_memory_utilization=0.85
+  - max_model_len=32768
+  - tensor_parallel_size=4
+  - world_size=4
+  - server_port=8000
+  - model_name=qwen3.5-27b
+  - extra_args=--enable-auto-tool-choice --tool-call-parser hermes --reasoning-parser
+    qwen3 --enforce-eager
 - name: ascend-910b_qwen3.5-9b_vllm
   envs: null
   params:
@@ -164,6 +175,17 @@ templates:
   - extra_args=--enable-auto-tool-choice --tool-call-parser hermes --reasoning-parser
     qwen3
   - image=harbor.tsingmao.com/xw-cli/vllm-ascend:qwen3_5-arm64
+- name: ascend-910c_qwen3.5-4b_vllm
+  envs: null
+  params:
+  - gpu_memory_utilization=0.85
+  - max_model_len=32768
+  - tensor_parallel_size=1
+  - world_size=1
+  - server_port=8000
+  - model_name=qwen3.5-4b
+  - extra_args=--enable-auto-tool-choice --tool-call-parser hermes --reasoning-parser
+    qwen3 --enforce-eager
 - name: ascend-910b_qwen3.5-0.8b_vllm
   envs: null
   params:
@@ -515,7 +537,7 @@ templates:
   - server_port=8000
   - model_name=glm-5
   - 'extra_args=--data-parallel-size 1 --enable-expert-parallel --seed 1024 --max-num-seqs 8 --max-num-batched-tokens 4096 --quantization ascend --enable-chunked-prefill --enable-prefix-caching --async-scheduling --additional-config {"multistream_overlap_shared_expert":true} --compilation-config {"cudagraph_mode":"FULL_DECODE_ONLY"} --speculative-config {"num_speculative_tokens":3,"method":"deepseek_mtp"}'
-  - image=harbor.tsingmao.com/xw-cli/vllm-ascend:a3-openeuler
+  - image=harbor.tsingmao.com/xw-cli/vllm-ascend:glm5-a3-arm64
 - name: ascend-310p_qwen3-32b_vllm
   params:
   - gpu_memory_utilization=0.8

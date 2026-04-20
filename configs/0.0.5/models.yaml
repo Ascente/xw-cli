@@ -632,6 +632,8 @@ models:
         - vllm:docker
       ascend-310p:
         - mlguider:docker
+      ascend-910c:
+        - vllm:docker
 
     tag: bfloat16
     capabilities:
@@ -689,6 +691,8 @@ models:
         - vllm:docker
       ascend-310p:
         - mlguider:docker
+      ascend-910c:
+        - vllm:docker
 
     tag: bfloat16
     capabilities:

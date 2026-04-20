@@ -128,7 +128,7 @@ vendors:
             - devices: [12, 13, 14, 15]
         runtime_images:
           vllm:
-            arm64: harbor.tsingmao.com/xw-cli/vllm-ascend:a3-openeuler
+            arm64: harbor.tsingmao.com/xw-cli/vllm-ascend:main-a3-arm64
             amd64: NONE
 
         ext_sandboxes:
